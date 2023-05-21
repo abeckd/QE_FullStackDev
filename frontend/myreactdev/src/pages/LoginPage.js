@@ -34,19 +34,12 @@ export default function LoginPage(){
             });
         }
     }
- 
-    let imgs = [
-      'https://as1.ftcdn.net/v2/jpg/03/39/70/90/1000_F_339709048_ZITR4wrVsOXCKdjHncdtabSNWpIhiaR7.jpg',
-    ];
      
   return (
     <div>
         <div className="container h-100">
           <div className="container-fluid h-custom">
             <div className="row d-flex justify-content-center align-items-center h-100">
-              <div className="col-md-9 col-lg-6 col-xl-5">
-                <img src={imgs[0]} className="img-fluid"/>
-              </div>
               <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                 <form>
                   <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
