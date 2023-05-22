@@ -1,8 +1,7 @@
 from flask import Flask, request, jsonify, session
 from flask_bcrypt import Bcrypt 
-from flask_cors import CORS, cross_origin 
+from flask_cors import CORS
 from models import db, User, Project
-import json
 from helper import serialize_model
 app = Flask(__name__)
  
@@ -50,7 +49,6 @@ def signup():
 def login_user():
     email = request.json["email"]
     password = request.json["password"]
-  
     user = User.query.filter_by(email=email).first()
   
     if user is None:
@@ -61,8 +59,6 @@ def login_user():
       
     session["user_id"] = user.id
 
-    
-  
     return jsonify({
         "id": user.id,
         "email": user.email
@@ -72,7 +68,6 @@ def login_user():
 @app.route("/projects", methods=["GET"])
 def return_projects():
     project = db.session.query(Project).all()
-    print(project)
     return serialize_model(project)
  
 

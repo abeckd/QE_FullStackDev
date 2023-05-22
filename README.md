@@ -1,8 +1,10 @@
 BackEnd
 1. Make sure to have python installed globally in your local computer which should include pip package manager as we will use it for intallation processes.
 
-2. Open a terminal in the PATH: './QE_FullStackDev/BackEnd' and run the following command:
+2. Open a terminal in the PATH: './QE_FullStackDev/backend' and run the following command:
     pip install requirements.txt
+
+3. Note: Make sure the Python venv PATH is pointing to the ../QE_FullStackDev/venv folder in your IDE.
 
 
 FrontEnd
@@ -13,7 +15,7 @@ FrontEnd
 
 
 Run the application
-1. Run the backend by opening a terminal in the PATH: './QE_FullStackDev/BackEnd' and run the following command:
+1. Run the backend by opening a terminal in the PATH: './QE_FullStackDev/backend' and run the following command:
     flask run
     Note: It is set to be runned in the default port which is 5000. If it was successful it should say: "Running on http://127.0.0.1:5000"
 
