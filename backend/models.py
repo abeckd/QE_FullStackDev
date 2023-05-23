@@ -28,7 +28,7 @@ class Project(db.Model):
     months_acquired = db.Column(db.String(11))
 
     def serialize(self):
-        return {"id": self.eID,
+        return {"eID": self.eID,
                 "project_name": self.project_name,
                 "project_number": self.project_number,
                 "acquisition_date":self.acquisition_date,

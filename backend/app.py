@@ -20,6 +20,7 @@ with app.app_context():
  
 @app.route("/", methods=["GET"])
 def hello_world():
+    print("hola")
     return "Hello, World!"
  
 @app.route("/signup", methods=["POST"])
@@ -64,12 +65,47 @@ def login_user():
         "email": user.email
     })
 
-
+#Project APIs#
 @app.route("/projects", methods=["GET"])
 def return_projects():
     project = db.session.query(Project).all()
     return serialize_model(project)
- 
+
+@app.route("/projects/<int:eID>", methods=["PUT"])
+def update_project(eID):
+    project = Project.query.get(eID)
+
+    print(project)
+
+    if project is None:
+        return jsonify({"error": "Project not found"}), 404
+    
+    if 'project_name' in request.json:
+        project.project_name = request.json['project_name']
+    # Add more if statements here for other fields of the project you want to update
+
+    db.session.commit()
+    return serialize_model(project)
+
+@app.route("/projects/delete/<int:eID>", methods=["DELETE"])
+def delete_project(eID):
+    project = Project.query.get(eID)
+
+    print(project)
+
+    if project is None:
+        return jsonify({"error": "Project not found"}), 404
+    
+    if project:
+        print("deleting")
+        print(project.project_name)
+        db.session.delete(project)
+        db.session.commit()
+        return jsonify({'message': 'Resource deleted successfully'})
+
+    else:
+        return jsonify({'message': 'Unknown Error'}), 500
+ #/Project APIs#
 
 if __name__ == "__main__":
     app.run(debug=True)
