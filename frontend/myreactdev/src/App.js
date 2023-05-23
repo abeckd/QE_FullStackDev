@@ -7,6 +7,7 @@ import LandingPage from "./pages/LandingPage";
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProjectsPage from './pages/ProjectsPage';
+import SearchPage from './pages/SearchPage';
  
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/search" element={<SearchPage />} />
         </Routes>
       </BrowserRouter>
     </div>

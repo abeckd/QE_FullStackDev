@@ -82,7 +82,6 @@ def update_project(eID):
     
     if 'project_name' in request.json:
         project.project_name = request.json['project_name']
-    # Add more if statements here for other fields of the project you want to update
 
     db.session.commit()
     return serialize_model(project)

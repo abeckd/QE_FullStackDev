@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import './PagesStyle.css';
+import { Link } from "react-router-dom";
 
 export default function Projects() {
   const [data, setData] = useState([]);
@@ -28,7 +29,7 @@ export default function Projects() {
   }
 
 const [editingProjectId, setEditingProjectId] = useState(null);
-const [newProjectName, setNewProjectName] = useState(""); // Add more states if there are other fields to edit.
+const [newProjectName, setNewProjectName] = useState("");
 
 const editProject = (id) => {
     setEditingProjectId(id);
@@ -37,7 +38,7 @@ const editProject = (id) => {
 
 const updateProject = () => {
     axios
-        .put(`http://127.0.0.1:5000/projects/${editingProjectId}`, { project_name: newProjectName }) // Add more fields if necessary.
+        .put(`http://127.0.0.1:5000/projects/${editingProjectId}`, { project_name: newProjectName })
         .then(function (response) {
             console.log("Project Updated Successfully")
             fetchProjects();
@@ -78,7 +79,9 @@ const deleteProject = (deletingProjectId) => {
 return (
   <div className="project-container">
       <button className="reset-button" onClick={resetTables}>Reset Tables</button>
-
+      <Link to="./search">
+        <button className="search-button">Search Table</button>
+      </Link>
       {!selectedCompany && (
           <div>
               <h2>Company Table</h2>

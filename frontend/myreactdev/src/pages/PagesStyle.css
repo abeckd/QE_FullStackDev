@@ -123,8 +123,35 @@ form .link-danger:hover {
     border: none;
     cursor: pointer;
   }
+
+  .search-button {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #48a4b0;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
   
   .reset-button:hover {
     background-color: #45a049;
   }
+
+  .project-container {
+    overflow-x: auto;
+  }
+  
+  .data-table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  .data-table th,
+  .data-table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
   

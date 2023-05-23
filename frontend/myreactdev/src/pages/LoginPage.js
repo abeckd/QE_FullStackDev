@@ -24,7 +24,6 @@ export default function LoginPage(){
             })
             .then(function (response) {
                 console.log(response);
-                //console.log(response.data);
                 navigate("/projects");
             })
             .catch(function (error) {
